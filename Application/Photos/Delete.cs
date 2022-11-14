@@ -32,7 +32,8 @@ namespace Application.Photos
 
                 if (user == null) return null;
 
-                var photo = user.Photos.FirstOrDefault(x => x.Id == request.Id);
+                string formattedId = System.Uri.UnescapeDataString(request.Id);
+                var photo = user.Photos.FirstOrDefault(x => x.Id == formattedId);
 
                 if (photo == null) return null;
 

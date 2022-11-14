@@ -29,6 +29,7 @@ namespace Infrastructure.Photos
                 {
                     File = new FileDescription(file.FileName, stream),
                     Transformation = new Transformation().Height(500).Width(500).Crop("fill"),
+                    Folder = "Reactivities"
                 };
 
                 var uploadResult = await _cloudinary.UploadAsync(uploadParams);
